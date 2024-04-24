@@ -18,6 +18,7 @@ At the bottom of a Merkle tree are the leaf nodes. These nodes contain the hashe
 
 The level above the leaf nodes consists of non-leaf nodes. Each of these nodes contains a hash that is the result of combining the hashes of two child nodes beneath it. This process of combining and hashing continues upwards in the tree, halving the number of nodes at each level, until there is a single hash at the top of the tree - the Merkle root.
 
+
 ### **The Merkle Root**
 
 The Merkle root is a single hash that effectively represents the entirety of the data blocks below it in the tree. It is this root which is stored on the blockchain, providing a compact and efficient summary of all transactions without storing every transaction individually.
@@ -51,6 +52,9 @@ Imagine you have a large file on a server that needs to be sent to a client over
 
 The first step in constructing a Merkle tree is to divide the file into consistent-sized chunks. It's crucial to keep the chunk size constant because this uniformity is necessary both for building the Merkle tree and for reconstructing it on different systems, such as client-side or server-side environments. Smaller chunks result in a larger Merkle tree, while larger chunks reduce the tree's size. Finding the right balance between chunk size and tree size is key, though we won't delve deeply into this balancing act here.
 
+<img width="602" alt="image" src="https://github.com/saifeemustafaq/merkletree_assignment/assets/15520369/5272de0d-8fee-409c-8960-183b02cee4c3">
+
+
 ### **Step 2: Hashing the Chunks**
 
 Once the file is divided, for example, into four equal parts (chunk 1, chunk 2, chunk 3, and chunk 4), we proceed by hashing each chunk. Using a consistent hash function is vital as it ensures that the output length remains constant regardless of the input size. For simplicity, let's label the hash outputs as follows: hash of chunk 1 = a, hash of chunk 2 = b, hash of chunk 3 = c, and hash of chunk 4 = d.
@@ -64,7 +68,9 @@ The next step involves combining these hashes to form the Merkle tree. You start
 * Combine and hash c and d to form a new hash, cd.
     
 * Finally, combine and hash ab and cd to get the root hash of the Merkle tree, abcd.
-    
+
+    <img width="1007" alt="image" src="https://github.com/saifeemustafaq/merkletree_assignment/assets/15520369/8419ce17-711e-4b92-a966-15bd247aa69d">
+
 
 This root hash, or the 'root hash,' encapsulates the entire file’s integrity.
 
@@ -73,10 +79,15 @@ This root hash, or the 'root hash,' encapsulates the entire file’s integrity.
 Once the Merkle tree is constructed and saved server-side, the file can be transferred to a client. To verify the file's integrity and identify any corruption, the Merkle tree is reconstructed client-side:
 
 * If the client-side root hash matches the server-side root hash (abcd), the file is confirmed to be intact.
-    
+  
+* <img width="985" alt="image" src="https://github.com/saifeemustafaq/merkletree_assignment/assets/15520369/e70b4158-83ae-4e21-b797-be60c652ae32">
+
 * If there's a discrepancy, such as the root hash turning out to be abcz due to corruption in the last chunk, the specific corrupted part of the file is identified without needing to re-download the entire file.
-    
+
+* <img width="1302" alt="image" src="https://github.com/saifeemustafaq/merkletree_assignment/assets/15520369/a1ad963c-e498-418d-9fad-a3c15cad873a">
 
 ### **Step 5: Efficient Repair**
 
 The process doesn't just stop at identifying corruption. The Merkle tree enables efficient repair by pinpointing the exact chunk that's corrupted. Once identified, only the corrupted chunk needs to be replaced, not the whole file. This efficiency is especially beneficial in large files, significantly reducing the bandwidth and time required for repairs.
+
+
