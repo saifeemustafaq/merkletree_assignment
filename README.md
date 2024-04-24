@@ -46,7 +46,7 @@ Imagine you have a large file on a server that needs to be sent to a client over
 
 ## **Video Explanation**
 
-[![Alternate Text](/images/thumbn.png)]([{video-url}](https://www.youtube.com/watch?v=jhj_pNd4A8w&ab_channel=MustafaSaifee) "Link Title")
+[![Alternate Text](/images/thumbnail.png)]([{video-url}](https://www.youtube.com/watch?v=jhj_pNd4A8w&ab_channel=MustafaSaifee) "Link Title")
 
 ## **Step 1: Breaking Down the File**
 
