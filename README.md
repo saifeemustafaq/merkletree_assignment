@@ -80,11 +80,12 @@ Once the Merkle tree is constructed and saved server-side, the file can be trans
 
 * If the client-side root hash matches the server-side root hash (abcd), the file is confirmed to be intact.
   
-* <img width="985" alt="image" src="https://github.com/saifeemustafaq/merkletree_assignment/assets/15520369/e70b4158-83ae-4e21-b797-be60c652ae32">
+  <img width="985" alt="image" src="https://github.com/saifeemustafaq/merkletree_assignment/assets/15520369/e70b4158-83ae-4e21-b797-be60c652ae32">
 
 * If there's a discrepancy, such as the root hash turning out to be abcz due to corruption in the last chunk, the specific corrupted part of the file is identified without needing to re-download the entire file.
 
-* <img width="1302" alt="image" src="https://github.com/saifeemustafaq/merkletree_assignment/assets/15520369/a1ad963c-e498-418d-9fad-a3c15cad873a">
+  <img width="1306" alt="image" src="https://github.com/saifeemustafaq/merkletree_assignment/assets/15520369/1ebf26f0-e06b-4c1d-95fb-75d2b5532fc8">
+
 
 ### **Step 5: Efficient Repair**
 
