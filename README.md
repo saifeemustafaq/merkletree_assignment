@@ -44,6 +44,9 @@ To verify a book's presence in a vast library using the library's unique catalog
 
 Imagine you have a large file on a server that needs to be sent to a client over a network. Given the size of the file and the variability of network conditions, there's a risk of data corruption during transmission. To ensure the file arrives intact and any errors can be efficiently detected and corrected, we use a Merkle tree. Let's go through the steps:
 
+<img width="602" alt="image" src="https://github.com/saifeemustafaq/merkletree_assignment/assets/15520369/5272de0d-8fee-409c-8960-183b02cee4c3">
+
+
 ## **Video Explanation**
 
 [![Alternate Text](/images/thumbnail2.png)]([{video-url}](https://www.youtube.com/watch?v=jhj_pNd4A8w&ab_channel=MustafaSaifee) "Link Title")
@@ -51,9 +54,6 @@ Imagine you have a large file on a server that needs to be sent to a client over
 ## **Step 1: Breaking Down the File**
 
 The first step in constructing a Merkle tree is to divide the file into consistent-sized chunks. It's crucial to keep the chunk size constant because this uniformity is necessary both for building the Merkle tree and for reconstructing it on different systems, such as client-side or server-side environments. Smaller chunks result in a larger Merkle tree, while larger chunks reduce the tree's size. Finding the right balance between chunk size and tree size is key, though we won't delve deeply into this balancing act here.
-
-<img width="602" alt="image" src="https://github.com/saifeemustafaq/merkletree_assignment/assets/15520369/5272de0d-8fee-409c-8960-183b02cee4c3">
-
 
 ### **Step 2: Hashing the Chunks**
 
