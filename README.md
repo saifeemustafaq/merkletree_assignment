@@ -99,7 +99,7 @@ Let's understand the Merkle tree with a code implementation.
 
 Imagine a scenario where an organization, Safe Global, is preparing for an important online conference. To ensure that only invited attendees can access certain secure documents and conference links, they decided to implement a whitelisting system using Merkle trees. The email addresses `alpha@email.com`, `beta@email.com`, and `charlie@email.com` belong to key team members who are authorized to access these resources.
 
-### Setup
+### Setting Up The Environment
 
 1. Install [Node.js](https://nodejs.org/en/download) and node package manager(npm)
 
@@ -109,15 +109,7 @@ Imagine a scenario where an organization, Safe Global, is preparing for an impor
     npm install merkletreejs crypto-js
     ```
 
-### Execute the code
-
-To run the code, run the following command in the terminal (assuming the code file name is `server.js`):
-
-```bash
-node server.js
-```
-
-### Code
+### Code Implementation
 
 Create a JavaScript file `server.js`, and type/paste the following code:
 
@@ -149,10 +141,18 @@ console.log('Proof for', targetEmail, ':', proof);
 
 // Step 5: Verify the proof
 const verified = tree.verify(proof, targetLeaf, root);
-console.log('Verification result:', verified);
+console.log('\nVerification result:', verified);
 ```
 
-### Breakdown
+### Execute the code
+
+Run the following command in the terminal to execute the code (assuming the code file name is `server.js`):
+
+```bash
+node server.js
+```
+
+### Breakdown: Explanation of the code
 
 Let's take a look at each step of the implementation in detail.
 
