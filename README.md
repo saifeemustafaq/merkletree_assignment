@@ -8,7 +8,7 @@ Before we begin with **Merkle trees**, it's important to understand the concept 
 
 ## **The Structure of Merkle Trees**
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1713806648258/acffd595-0390-443c-8fc0-adcc2070d0e3.png)
+![The Structure Merkle Trees](https://cdn.hashnode.com/res/hashnode/image/upload/v1713806648258/acffd595-0390-443c-8fc0-adcc2070d0e3.png)
 
 ### **Leaf Nodes**
 
@@ -17,7 +17,6 @@ At the bottom of a Merkle tree are the leaf nodes. These nodes contain the hashe
 ### **Non-Leaf Nodes**
 
 The level above the leaf nodes consists of non-leaf nodes. Each of these nodes contains a hash that is the result of combining the hashes of two child nodes beneath it. This process of combining and hashing continues upwards in the tree, halving the number of nodes at each level, until there is a single hash at the top of the tree - the Merkle root.
-
 
 ### **The Merkle Root**
 
@@ -30,11 +29,10 @@ Merkle proofs are used to verify the integrity of the data. Let's understand thi
 Imagine you are in a huge library that contains every book ever written in the history of humankind. The unique part is that instead of checking out books, you check out lists that contain summaries of the books. Now, you are asked to prove that a specific book is in the library without having to show someone every book (which would be impossible due to the library's size). Welcome to the Special Merkle Library.
 
 * **The Books (Data Blocks)**: Each book in the library represents a piece of data (like a transaction in a blockchain).
-    
+
 * **Summaries (Hashes)**: For each book, there's a unique summary that captures the essence of the book in a fixed size, much like a hash does for data. No two books have the same summary.
-    
+
 * **Catalog (Merkle Tree)**: These summaries are organized in a catalogue (our Merkle tree), where summaries are combined and summarized again, layer by layer, until there's a single, ultimate summary representing every book in the library - the root summary (the Merkle root).
-    
 
 ### **Merkle Proofs: Let's find a book**
 
@@ -46,10 +44,9 @@ Imagine you have a large file on a server that needs to be sent to a client over
 
 <img width="602" alt="image" src="https://github.com/saifeemustafaq/merkletree_assignment/assets/15520369/5272de0d-8fee-409c-8960-183b02cee4c3">
 
-
 ## **Video Explanation**
 
-[![Alternate Text](/images/thumbnail2.png)]([{video-url}](https://www.youtube.com/watch?v=jhj_pNd4A8w&ab_channel=MustafaSaifee) "Link Title")
+[![YouTube Video Thumbnail](/images/thumbnail2.png)]([{video-url}](https://www.youtube.com/watch?v=jhj_pNd4A8w&ab_channel=MustafaSaifee) "Link Title")
 
 ## **Step 1: Breaking Down the File**
 
@@ -64,13 +61,12 @@ Once the file is divided, for example, into four equal parts (chunk 1, chunk 2, 
 The next step involves combining these hashes to form the Merkle tree. You start at the leaf nodes and work your way up:
 
 * Combine and hash a and b to form a new hash, ab.
-    
+
 * Combine and hash c and d to form a new hash, cd.
-    
+
 * Finally, combine and hash ab and cd to get the root hash of the Merkle tree, abcd.
 
     <img width="1007" alt="image" src="https://github.com/saifeemustafaq/merkletree_assignment/assets/15520369/8419ce17-711e-4b92-a966-15bd247aa69d">
-
 
 This root hash, or the 'root hash,' encapsulates the entire file’s integrity.
 
@@ -78,14 +74,13 @@ This root hash, or the 'root hash,' encapsulates the entire file’s integrity.
 
 Once the Merkle tree is constructed and saved server-side, the file can be transferred to a client. To verify the file's integrity and identify any corruption, the Merkle tree is reconstructed client-side:
 
-* If the client-side root hash matches the server-side root hash (abcd), the file is confirmed to be intact.
+- If the client-side root hash matches the server-side root hash (abcd), the file is confirmed to be intact.
   
   <img width="985" alt="image" src="https://github.com/saifeemustafaq/merkletree_assignment/assets/15520369/e70b4158-83ae-4e21-b797-be60c652ae32">
 
-* If there's a discrepancy, such as the root hash turning out to be abcz due to corruption in the last chunk, the specific corrupted part of the file is identified without needing to re-download the entire file.
+- If there's a discrepancy, such as the root hash turning out to be abcz due to corruption in the last chunk, the specific corrupted part of the file is identified without needing to re-download the entire file.
 
   <img width="1306" alt="image" src="https://github.com/saifeemustafaq/merkletree_assignment/assets/15520369/1ebf26f0-e06b-4c1d-95fb-75d2b5532fc8">
-
 
 ### **Step 5: Efficient Repair**
 
@@ -99,7 +94,7 @@ Let's understand the Merkle tree with a code implementation.
 
 Imagine a scenario where an organization, Safe Global, is preparing for an important online conference. To ensure that only invited attendees can access certain secure documents and conference links, they decided to implement a whitelisting system using Merkle trees. The email addresses `alpha@email.com`, `beta@email.com`, and `charlie@email.com` belong to key team members who are authorized to access these resources.
 
-### Setup
+### Setting Up The Environment
 
 1. Install [Node.js](https://nodejs.org/en/download) and node package manager(npm)
 
@@ -109,7 +104,7 @@ Imagine a scenario where an organization, Safe Global, is preparing for an impor
     npm install merkletreejs crypto-js
     ```
 
-### Execute the code
+### Execute The Code
 
 To run the code, run the following command in the terminal (assuming the code file name is `server.js`):
 
@@ -117,9 +112,9 @@ To run the code, run the following command in the terminal (assuming the code fi
 node server.js
 ```
 
-### Code
+### Code Implementation
 
-Create a JavaScript file `server.js`, and type/paste the following code:
+Create a JavaScript file as `server.js`, and type/paste the following code:
 
 ```javascript
 const { MerkleTree } = require('merkletreejs');
@@ -156,7 +151,7 @@ console.log('Verification result:', verified);
 
 Let's take a look at each step of the implementation in detail.
 
-![alt text](/images/code_merkle_tree.png)
+![Email Merkle tree structure](/images/code_merkle_tree.png)
 
 #### Step 1: Preparing the List of Email Addresses
 
@@ -326,4 +321,12 @@ const verified = tree.verify(proof, targetLeaf, root);
 console.log("Verification result:", verified);
 ```
 
-The verification would fail with the message `Verification Result: false` because `delta@email.com` isn't whitelisted. This causes the `verified` variable to be `false`. To grasp this situation better, if you print the `tree.getProof(leaf)` for this new email on the terminal, you'll find an empty array, indicating an invalid proof.
+The verification would fail with the message `Verification Result: false` because `delta@email.com` isn't whitelisted. This causes the `verified` variable to be `false`. To better understand this situation, if you print the `tree.getProof(leaf)` for this new email on the terminal, you'll find an empty array, indicating an invalid proof.
+
+## Conclusion
+
+In the digital world, where data integrity and security are critical, Merkle trees offer a sophisticated yet elegant solution. Originally from the field of cryptography, these structures have become a fundamental component in blockchain technologies, providing a reliable method for verifying the integrity of large data sets. The mechanism of Merkle trees allows systems to ensure that data has not been **altered, tampered with, or corrupted**, without the need to examine the entire data set—highlighting their critical role in enhancing digital trust.
+
+Through the concepts such as hashing, Merkle proofs, and practical applications like file transfer and access control, we can see how Merkle trees optimize data verification processes. They enable efficient validation of individual data elements within large data sets, making them essential for blockchain transactions where verifying every single operation would be computationally overwhelming. Additionally, the adaptability of Merkle trees allows for broad application across various industries, from secure financial transactions to privacy-enhanced communication systems.
+
+As technology evolves and the volume of digital data continues to expand, the importance of robust, scalable, and efficient cryptographic solutions like Merkle trees will only grow. Whether in the secure transfer of files or in the verification of blockchain transactions, Merkle trees remain a fundamental part of modern cryptography. In summary, the foundational role of Merkle trees in blockchain technology not only secures data but also propels the industry towards a more reliable and trustworthy digital future.
