@@ -101,7 +101,7 @@ Imagine a scenario where an organization, Safe Global, is preparing for an impor
 
 ### Setup
 
-1. Install [Node.js](https://nodejs.org/en/download) and node package manager(npm): 
+1. Install [Node.js](https://nodejs.org/en/download) and node package manager(npm)
 
 2. Install the `merkletreejs` package and `crypto-js` using npm.
 
