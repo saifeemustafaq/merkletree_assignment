@@ -95,7 +95,7 @@ The process doesn't just stop at identifying corruption. The Merkle tree enables
 
 ## Code Implementation
 
-Let's understand the Merkle tree with a code implement.
+Let's understand the Merkle tree with a code implementation.
 
 Imagine a scenario where an organization, Safe Global, is preparing for an important online conference. To ensure that only invited attendees can access certain secure documents and conference links, they decided to implement a whitelisting system using Merkle trees. The email addresses `alpha@email.com`, `beta@email.com`, and `charlie@email.com` belong to key team members who are authorized to access these resources.
 
@@ -154,7 +154,7 @@ console.log('Verification result:', verified);
 
 ### Breakdown
 
-Let's take a look at each step in the implementation in detail.
+Let's take a look at each step of the implementation in detail.
 
 ![alt text](/images/code_merkle_tree.png)
 
@@ -207,7 +207,7 @@ The system then verifies the proof by recalculating the hashes up to the root. I
 
 ### Output
 
-You should see an out like the one below
+You should see an output like the one below:
 
 ```bash
 Root of the tree: d4e6aa093190629dba575173dc9bfc3712038c1c027bcaa65eab53d18867838a
@@ -307,7 +307,7 @@ Proof for beta@email.com : [
 
     **Verification Result**: The `true` result indicates that the proof successfully verified that the email `beta@email.com` is part of the whitelist as its recalculated path matches the root hash.
 
-This method of using Merkle trees for verifying access to secure resources is a powerful tool for many digital applications, from blockchain technologies to secure communications and content access control.
+This method of using Merkle trees to verify access to secure resources is a powerful tool for many digital applications, from blockchain technologies to secure communications and content access control.
 
 ---
 
