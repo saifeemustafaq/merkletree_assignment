@@ -24,7 +24,7 @@ The Merkle root is a single hash that effectively represents the entirety of the
 
 ## **Merkle Proofs: Verifying Data Integrity**
 
-Merkle proofs are used to verify the integrity of the data. Let's understand this with a fictional example, and later, we will take up a real example:
+Merkle proofs are used to verify the integrity of the data. It provides a way to efficiently and securely verify the contents of large data structures, such as databases or files in blockchain technology. Let's understand this with a fictional example, and later, we will take up a real example:
 
 Imagine you are in a huge library that contains every book ever written in the history of humankind. The unique part is that instead of checking out books, you check out lists that contain summaries of the books. Now, you are asked to prove that a specific book is in the library without having to show someone every book (which would be impossible due to the library's size). Welcome to the Special Merkle Library.
 
@@ -38,7 +38,7 @@ Imagine you are in a huge library that contains every book ever written in the h
 
 To verify a book's presence in a vast library using the library's unique catalogue systems similar to a Merkle proof in blockchain, one begins with the book's unique summary. Next, a pathway of additional summaries is collected, which, when sequentially combined according to the library's organizational rules, recreate the library's root summary from the ground up, starting from the initial book's summary. This process ends in the verification step, where if the independently recreated root summary matches the library's official root summary, it conclusively proves that the book in question is indeed contained within the library, mirroring the efficient and secure verification of transactions within a blockchain.
 
-## **Real-life example: Transferring a large file**
+### **Real-life example: Transferring a large file**
 
 Imagine you have a large file on a server that needs to be sent to a client over a network. Given the size of the file and the variability of network conditions, there's a risk of data corruption during transmission. To ensure the file arrives intact and any errors can be efficiently detected and corrected, we use a Merkle tree. Let's go through the steps:
 
@@ -48,7 +48,7 @@ Imagine you have a large file on a server that needs to be sent to a client over
 
 [![YouTube Video Thumbnail](/images/thumbnail2.png)]([{video-url}](https://www.youtube.com/watch?v=jhj_pNd4A8w&ab_channel=MustafaSaifee) "Link Title")
 
-## **Step 1: Breaking Down the File**
+### **Step 1: Breaking Down the File**
 
 The first step in constructing a Merkle tree is to divide the file into consistent-sized chunks. It's crucial to keep the chunk size constant because this uniformity is necessary both for building the Merkle tree and for reconstructing it on different systems, such as client-side or server-side environments. Smaller chunks result in a larger Merkle tree, while larger chunks reduce the tree's size. Finding the right balance between chunk size and tree size is key, though we won't delve deeply into this balancing act here.
 
@@ -232,7 +232,7 @@ Proof for beta@email.com : [
 
 ---
 
-### Breakdown
+### Understanding the Output
 
 1. **Root of the tree**
 
@@ -306,6 +306,8 @@ This method of using Merkle trees to verify access to secure resources is a powe
 
 ---
 
+## What If
+
 Let's see what happens if the email provided isn't on the whitelist, say `delta@email.com`.
 
 > Substitute `beta@email.com` with `delta@email.com` in the Step 4. Then, perform the verification again.
@@ -327,6 +329,6 @@ The verification would fail with the message `Verification Result: false` becaus
 
 In the digital world, where data integrity and security are critical, Merkle trees offer a sophisticated yet elegant solution. Originally from the field of cryptography, these structures have become a fundamental component in blockchain technologies, providing a reliable method for verifying the integrity of large data sets. The mechanism of Merkle trees allows systems to ensure that data has not been **altered, tampered with, or corrupted**, without the need to examine the entire data set—highlighting their critical role in enhancing digital trust.
 
-Through the concepts such as hashing, Merkle proofs, and practical applications like file transfer and access control, we can see how Merkle trees optimize data verification processes. They enable efficient validation of individual data elements within large data sets, making them essential for blockchain transactions where verifying every single operation would be computationally overwhelming. Additionally, the adaptability of Merkle trees allows for broad application across various industries, from secure financial transactions to privacy-enhanced communication systems.
+Through the concepts of hashing, Merkle proofs, and practical applications like file transfer and access control, we can see how Merkle trees optimize data verification processes. They enable efficient validation of individual data elements within large data sets, making them essential for blockchain transactions where verifying every single operation would be computationally overwhelming. Additionally, the adaptability of Merkle trees allows for broad application across various industries, from secure financial transactions to privacy-enhanced communication systems.
 
 As technology evolves and the volume of digital data continues to expand, the importance of robust, scalable, and efficient cryptographic solutions like Merkle trees will only grow. Whether in the secure transfer of files or in the verification of blockchain transactions, Merkle trees remain a fundamental part of modern cryptography. In summary, the foundational role of Merkle trees in blockchain technology not only secures data but also propels the industry towards a more reliable and trustworthy digital future.
