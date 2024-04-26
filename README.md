@@ -90,7 +90,7 @@ The process doesn't just stop at identifying corruption. The Merkle tree enables
 
 ## Demonstration with JavaScript Implementation
 
-Let's explore how a Merkle tree and Merkle proof function with a practical code implementation in JavaScript.
+Let's explore Merkle tree and Merkle proof with a practical implementation in JavaScript.
 
 Imagine a scenario where an organization, Safe Global, is preparing for an important online conference. To ensure that only invited attendees can access certain secure documents and conference links, they decided to implement a whitelisting system using Merkle trees. The email addresses `alpha@email.com`, `beta@email.com`, and `charlie@email.com` belong to key team members who are authorized to access these resources.
 
