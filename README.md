@@ -88,7 +88,7 @@ The process doesn't just stop at identifying corruption. The Merkle tree enables
 
 ---
 
-## Code Implementation
+## Demonstration with JavaScript Implementation
 
 Let's understand the Merkle tree with a code implementation.
 
