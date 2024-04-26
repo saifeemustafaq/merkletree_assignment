@@ -104,14 +104,6 @@ Imagine a scenario where an organization, Safe Global, is preparing for an impor
     npm install merkletreejs crypto-js
     ```
 
-### Execute The Code
-
-To run the code, run the following command in the terminal (assuming the code file name is `server.js`):
-
-```bash
-node server.js
-```
-
 ### Code Implementation
 
 Create a JavaScript file as `server.js`, and type/paste the following code:
@@ -147,7 +139,15 @@ const verified = tree.verify(proof, targetLeaf, root);
 console.log('Verification result:', verified);
 ```
 
-### Breakdown
+### Execute The Code
+
+To run the code, run the following command in the terminal (assuming the code file name is `server.js`):
+
+```bash
+node server.js
+```
+
+### Breakdown Of The Code
 
 Let's take a look at each step of the implementation in detail.
 
