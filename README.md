@@ -28,11 +28,11 @@ Merkle proofs are used to verify the integrity of the data. It provides a way to
 
 Imagine you are in a huge library that contains every book ever written in the history of humankind. The unique part is that instead of checking out books, you check out lists that contain summaries of the books. Now, you are asked to prove that a specific book is in the library without having to show someone every book (which would be impossible due to the library's size). Welcome to the Special Merkle Library.
 
-* **The Books (Data Blocks)**: Each book in the library represents a piece of data (like a transaction in a blockchain).
+- **The Books (Data Blocks)**: Each book in the library represents a piece of data (like a transaction in a blockchain).
 
-* **Summaries (Hashes)**: For each book, there's a unique summary that captures the essence of the book in a fixed size, much like a hash does for data. No two books have the same summary.
+- **Summaries (Hashes)**: For each book, there's a unique summary that captures the essence of the book in a fixed size, much like a hash does for data. No two books have the same summary.
 
-* **Catalog (Merkle Tree)**: These summaries are organized in a catalogue (our Merkle tree), where summaries are combined and summarized again, layer by layer, until there's a single, ultimate summary representing every book in the library - the root summary (the Merkle root).
+- **Catalog (Merkle Tree)**: These summaries are organized in a catalogue (our Merkle tree), where summaries are combined and summarized again, layer by layer, until there's a single, ultimate summary representing every book in the library - the root summary (the Merkle root).
 
 ### Merkle Proofs: Let's find a book
 
